@@ -1,0 +1,54 @@
+{
+  "appId": "com.institute.zoom-attendance-admin",
+  "productName": "Zoom Attendance Admin",
+  "directories": {
+    "output": "dist",
+    "buildResources": "public"
+  },
+  "files": [
+    "src/**/*",
+    "build/**/*",
+    "package.json",
+    "node_modules/**/*",
+    "!node_modules/.cache"
+  ],
+  "extraResources": [
+    {
+      "from": ".env.example",
+      "to": ".env.example"
+    }
+  ],
+  "win": {
+    "target": [
+      {
+        "target": "nsis",
+        "arch": ["x64", "ia32"]
+      }
+    ],
+    "icon": "public/icon.png"
+  },
+  "nsis": {
+    "oneClick": false,
+    "allowToChangeInstallationDirectory": true,
+    "createDesktopShortcut": true,
+    "createStartMenuShortcut": true,
+    "shortcutName": "Zoom Attendance Admin"
+  },
+  "mac": {
+    "target": "dmg",
+    "icon": "public/icon.png",
+    "category": "public.app-category.education"
+  },
+  "dmg": {
+    "title": "Zoom Attendance Admin",
+    "icon": "public/icon.png"
+  },
+  "linux": {
+    "target": [
+      "AppImage",
+      "deb"
+    ],
+    "icon": "public/icon.png",
+    "category": "Education"
+  }
+}
